@@ -22,7 +22,8 @@ $english = array(
 	'ohyes:add:friend' => 'Add Friend',
 	'ohyes:un:friend' => 'Unfriend',
 	'ohyes:message' => 'Message',
-	'ohyes:about' => 'About'
+	'ohyes:about' => 'About',
+	'profile:edit' => 'Edit',
  );
 					
 add_translation("en", $english);

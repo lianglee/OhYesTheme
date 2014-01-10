@@ -198,6 +198,15 @@ if(elgg_is_logged_in()){
       ));
 	}
 }
+if(elgg_get_logged_in_user_entity()->guid ==  $user->guid){
+    elgg_register_menu_item('ohyes/profile', array(
+	    		'name' => 'profile_edit',
+		    	'href' => "profile/$user->username/edit",
+			    'text' =>  elgg_echo('profile:edit'),
+		    	'class' => 'ohyes-buttons-set elgg-button-submit',
+
+      ));
+}
  elgg_register_menu_item('ohyes/profile', array(
 			'name' => 'info',
 			'href' => '#ohyes-profile-info',

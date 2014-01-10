@@ -11,30 +11,25 @@ We have just started a new Team called 'OhYesTeam' for Elgg community to support
 
 Installation
 ==============
-* Download Theme 
-
-* If you are downloading from Github then after extract in mod directory rename folder 'OhyesTheme-master' to 'OhyesTheme'
-
-* Extract it into 'mod' directory.
-
+* Download the Theme 
+* If you are downloading from Github then after extract in mod directory rename the folder 'OhyesTheme-master' to 'OhyesTheme'
+* Extract it into the 'mod' directory.
 * Enable it.
-
-* Run Upgrade.php
-
-* Flush Cache.
+* Click / Run Upgrade.php
+* Click / Flush Caches.
 
 Integrations
 ==============
-## For Adding Menu In Header.
+##For Adding Menu In Header.
     see file integration/HeaderMenu.md 
 
-## Change footer
-    ssee file integration/ChangeFooter.md
+##Change footer
+    see file integration/ChangeFooter.md
  
 Contributors
 ==============
- ## To See List.
-   see file CONTRIBUTORS.md
+##To See List
+   <pre> see file CONTRIBUTORS.md </pre>
 
 Report Issues
 ===============
