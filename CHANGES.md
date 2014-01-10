@@ -1,9 +1,9 @@
-OhYesTheme 1.1
+OhYesTheme 1.2-development
 
 (https://github.com/lianglee/OhYesTheme)
 
 Changes:
- * Added Profile Edit Button.
+ * Changed Blog Icon.
 
 
 
