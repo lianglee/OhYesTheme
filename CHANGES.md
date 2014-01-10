@@ -1,8 +1,9 @@
-OhYesTheme 1.0
+OhYesTheme 1.1
 
 (https://github.com/lianglee/OhYesTheme)
 
-Initial Release
+Changes:
+ * Added Profile Edit Button.
 
 
 
