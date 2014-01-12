@@ -38,7 +38,7 @@ $lang = get_current_language();
 <head>
 <?php echo elgg_view('page/elements/head', $vars); ?>
 </head>
-<body style="background-color:#eee">
+<body class="ohyes-theme-page">
 <div class="elgg-page elgg-page-default">
 	<div class="elgg-page-messages">
 		<?php echo $messages; ?>
@@ -55,7 +55,7 @@ $lang = get_current_language();
 	 <div class="ohyes_river_page">
 <?php if(!elgg_in_context('profile')){ ?>
           <div class="ohyes-theme-centered">
-              <div style="padding: 20px;margin-left: 100px;margin-top:20px;width:750px;">
+              <div class="ohyes-theme-header">
                                    <?php echo OhYesTheme::view_menu('header', 'header'); ?>  
 
               </div>
