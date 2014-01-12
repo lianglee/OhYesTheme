@@ -391,3 +391,20 @@ font-size: 30px;
  width:100px;
  font-weight:bold;
 }
+/*****************************************
+  OhYesTheme Page
+******************************************/
+.ohyes-theme-page{
+ background:#eee;
+}
+
+.ohyes-theme-header {
+  padding: 20px;
+  margin-left: 100px;
+  margin-top:50px;
+  width:750px;
+}
+.ohyes-theme-centered {
+  width:900px; 
+  margin:0 auto;
+}
