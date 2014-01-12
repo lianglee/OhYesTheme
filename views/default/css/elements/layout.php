@@ -37,18 +37,20 @@
 
 /***** TOPBAR ******/
 .elgg-page-topbar {
-background-color: #1B1B1B;
-background-image: -moz-linear-gradient(top, #222222, #111111);
-background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#222), to(#111));
-background-image: -webkit-linear-gradient(top, #222, #111);
-background-image: -o-linear-gradient(top, #222222, #111111);
-background-image: linear-gradient(to bottom, #222, #111);
-background-repeat: repeat-x;
-border-color: #252525;
-height:45px;
-left:0;
-right:0;
-	z-index: 9000;
+  position:fixed;
+  top:0;
+  background-color: #1B1B1B;
+  background-image: -moz-linear-gradient(top, #222222, #111111);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#222), to(#111));
+  background-image: -webkit-linear-gradient(top, #222, #111);
+  background-image: -o-linear-gradient(top, #222222, #111111);
+  background-image: linear-gradient(to bottom, #222, #111);
+  background-repeat: repeat-x;
+  border-color: #252525;
+  height:45px;
+  left:0;
+  right:0;
+  z-index: 9000;
 }
 .elgg-page-topbar > .elgg-inner {
 	padding: 0 10px;
