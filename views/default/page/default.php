@@ -37,7 +37,7 @@ $lang = get_current_language();
 <head>
 <?php echo elgg_view('page/elements/head', $vars); ?>
 </head>
-<body style="background:#eee;">
+<body class="ohyes-theme-page">
 <div class="elgg-page elgg-page-default">
 	<div class="elgg-page-messages">
 		<?php echo $messages; ?>
@@ -48,9 +48,9 @@ $lang = get_current_language();
 			<?php echo $topbar; ?>
 		</div>
 	</div>
-<div class="ohyes-theme-centered" style="width:900px; margin:0 auto;">
+<div class="ohyes-theme-centered">
     
-	     <div style="padding: 20px;margin-left: 100px;margin-top:20px;width:750px;">
+	     <div class="ohyes-theme-header">
               
                <?php echo OhYesTheme::view_menu('header', 'header'); ?>  
                 
