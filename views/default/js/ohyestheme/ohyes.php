@@ -13,6 +13,7 @@
 jQuery(document).ready(function() {
       $("#ohyes-profile-about").fancybox();
       $("#ohyes-profile-menu-admin").fancybox();
+      $("#ohyes-profile-cover").fancybox();
 
 });
 
