@@ -249,6 +249,8 @@ function ohyestheme_register_menus(){
 			'priority' => 100,
 			'section' => 'alt',
 		));
+	}
+	
 	elgg_register_menu_item('topbar', array(
 			'name' => 'usettings_ohyestheme',
 			'href' => "settings/user/{$is_user->username}",
@@ -259,7 +261,7 @@ function ohyestheme_register_menus(){
 	
 	elgg_register_menu_item('topbar', array(
 			'name' => 'topbar_ohyestheme_user',
-			'href' => "settings/user/{$is_user->username}",
+			'href' => "profile/{$is_user->username}",
 			'text' =>  "$is_user->name",
 			'class' => 'ohyestheme-topbar-username',
 			'style' => 'font-size:18px;',
@@ -280,7 +282,6 @@ function ohyestheme_register_menus(){
 		   'section' => 'alt',
 
 		));
-	}
 	
 	}
 	
