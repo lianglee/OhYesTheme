@@ -24,8 +24,13 @@ if (!isset($OhYesTheme)) {
 * @access system
 * @return null;
 */
-function ohyes_theme(){  
-   
+function ohyes_theme(){
+   //cover actions register
+   if(OhYesTheme::canCover()){
+   $action_path = elgg_get_plugins_path() . 'OhYesTheme/actions/';
+   elgg_register_action('ohyes/addcover', "$action_path/upload/cover.php");
+   elgg_register_action('ohyes/deletecover', "$action_path/delete/cover.php");
+   }
    //unregister some of menus
    elgg_register_event_handler('pagesetup', 'system', 'ohyestheme_unregister_menus');
    
@@ -47,6 +52,7 @@ function ohyes_theme(){
    elgg_register_page_handler('activity', 'ohyes_activity_page_handler');
    elgg_register_page_handler('blog', 'ohyes_blog_page_handler');
    elgg_register_page_handler('profile', 'ohyes_profile_page_handler');
+   elgg_register_page_handler('ohyes', 'ohyes_page_handler');
    
    //add a fancybox
    elgg_register_js('jquery.fancybox', 'vendors/jquery/fancybox/jquery.fancybox-1.3.4.pack.js', 'head');
@@ -206,6 +212,16 @@ if(elgg_get_logged_in_user_entity()->guid ==  $user->guid){
 		    	'class' => 'ohyes-buttons-set elgg-button-submit',
 
       ));
+   if(OhYesTheme::canCover()){	
+   elgg_register_menu_item('ohyes/profile', array(
+	    		'name' => 'profile_cover',
+		    	'href' => "#ohyes-theme-addcover",
+				'id' => 'ohyes-profile-cover',
+			    'text' =>  elgg_echo('ohyes:cover:add'),
+		    	'class' => 'ohyes-buttons-set elgg-button-submit',
+
+      ));
+   }
 }
  elgg_register_menu_item('ohyes/profile', array(
 			'name' => 'info',
@@ -314,6 +330,30 @@ if (elgg_is_logged_in()) {
 
 
 }
-
+/**
+* Get User Cover photo
+* @Required Page Handler 'ohyes_page_handler'
+* @access system
+* @return page;
+*/
+function ohyes_page_handler($page){
+	$base_dir = elgg_get_plugins_path() . 'OhYesTheme/pages/theme/';
+	if (!isset($page[0])) {
+		$page = array('cover');
+	}
+	  if(empty($page[1]) || $page[2] !== md5($page[1])){
+	     exit('error');	
+	   }
+	    switch ($page[0]) {
+		case "cover":
+		    $user = $page[1];
+			include "$base_dir/cover.php";
+			break;
+			
+		default:
+			return false;
+	}
+	return true;
+}
 include_once(elgg_get_plugins_path().'OhYesTheme/lib/ohyestheme.setcontext.php');
 
