@@ -46,7 +46,23 @@ $options['subject_guid'] = elgg_get_page_owner_guid();
 $river_profile = elgg_list_river($options);
 $profile_details = elgg_view('profile/details');
 
+$cover_form = elgg_view_form("ohyes/addcover", array(
+	   'method' => 'post', 
+	   'enctype' => 'multipart/form-data' ,
+	 ));
+
+$profile_cover = OhYesTheme::coverUrl($user->guid);
+if(OhYesTheme::isCover($user->guid) && OhYesTheme::canCover()){
+  $cover = ' 
+  <div id="ohyes-profile-container" style="background:#E0E0E0;border: 1px solid #eee;margin-left: 63px;height:250px;">
+    <div class="ohyes-profile-cover" style="background:url(\''.$profile_cover.'\');"></div>
+  </div>';
+} 
+else {
+  $cover = '';       	
+}
 $profile =  <<<HTML
+   $cover
 <div id="ohyes-profile-container" style="background:#fff;border: 1px solid #eee;margin-left: 63px">
   <span class="ohyes-profile-menu"> 
         $profile_menu
@@ -56,7 +72,7 @@ $profile =  <<<HTML
             </div>
         </span>
 
-<span class="ohyes-profile-infos" style="margin-left: 300px;margin-top: -200px;width: 610px;">
+<span class="ohyes-profile-infos" style="  margin-left: 300px;margin-top: -200px;width: 610px;">
 	<h2 class="ohyes-profile-info-name"> $user->name </h2>
        $user->description 
 </span>
@@ -80,7 +96,11 @@ $profile =  <<<HTML
         $admin_links
     </div>
 </div>
+<div style="display:none;">
+   <div id="ohyes-theme-addcover">
+    $cover_form  
+    </div>
+</div>
 
 HTML;
-
 echo $profile;
