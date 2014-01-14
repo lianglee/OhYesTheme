@@ -3,6 +3,10 @@ OhYesTheme 1.2
 
 (https://github.com/lianglee/OhYesTheme)
 
+BugFixes:
+* The name on topbar must point out user profile;
+* Usericon and settings on topbar is only for admin , changed to normal user.
+
 Changes:
  * Changed Blog Icon.
  * Move topbar with page #7.
