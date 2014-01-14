@@ -372,6 +372,11 @@ font-size: 30px;
     padding: 30px;
     border-bottom: 1px solid #DADADA;
 }
+.ohyes-profile-cover {
+ height: 250px;
+background-size: cover;
+background-repeat: no-repeat;
+}
 /******************************************
  Subtitle
 *******************************************/
