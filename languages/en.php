@@ -24,6 +24,13 @@ $english = array(
 	'ohyes:message' => 'Message',
 	'ohyes:about' => 'About',
 	'profile:edit' => 'Edit',
+	
+	'ohyes:cover:add' => 'Add Cover',
+	'ohyes:theme:cover:done' => 'Cover is added',
+	'ohyes:theme:cover:no' => 'Cannot add cover',
+	'ohyes:theme:cover:removed' => 'Cover has been removed',
+	'ohyes:theme:cover:remove:error' => 'Cannot remove cover, please try again',
+	
  );
 					
 add_translation("en", $english);
