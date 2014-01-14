@@ -82,5 +82,115 @@ public static function loadCSS(){
    elgg_load_css('jquery.fancybox');
    elgg_load_css('ohyestheme.css');		
 }
+/**
+* Set cover settings;
+* @access system
+* @return return;
+*/
+
+public function isCoverSet($params = array()){
+return elgg_set_plugin_user_setting(
+         $params['name'], 
+		 $params['value'] ,
+		 $params['user_guid'], 
+		 $params['plugin_id']
+		 );
+}
+/**
+* Unlink Profile Cover;
+* @access system
+* @return return;
+*/
+public function UnlinkCover($user){
+$this->iscoversettings = array(
+                         'name' => 'oyestheme_cover', 
+                         'value' => 0,
+                         'user_guid' => $this->user->guid,
+                         'plugin_id' => 'OhYesTheme' 
+); 
+  if($this->isCoverSet($this->iscoversettings)){
+  return true;	
+  }
+return false;
+}
+/**
+* Check if user have cover or not;
+* @access system
+* @return return;
+*/
+public static function isCover($user){
+if(elgg_get_plugin_user_setting(
+							'oyestheme_cover', 
+							 $user, 
+							 'OhYesTheme') == 1){
+	  return true;
+} 
+else {
+  return false;	
+}
+
+}
+/**
+* Get cover url;
+* @access system
+* @return url;
+*/
+public static function coverUrl($user){	
+return  elgg_get_site_url()."ohyes/cover/{$user}/".md5($user);	
+}
+/**
+* User Profile Cover Management;
+* @access system
+* @return return;
+*/
+public function upload_cover($user){	
+if(!empty($user)){
+   $this->user = $user;	
+   $this->OhYesCover = $this->user->getObjects("OhYesProfileCover", 1, 0); 
+	if(!$this->OhYesCover){
+			$this->OhYesCover = new ElggObject();
+			$this->OhYesCover->subtype = "OhYesProfileCover";
+			$this->OhYesCover->access_id = 2;
+			$this->OhYesCover->save();
+			$this->OhYesCover = $this->user->getObjects("OhYesProfileCover", 1, 0); 
+	} 
+	$this->iscoversettings = array(
+                         'name' => 'oyestheme_cover', 
+                         'value' => 1,
+                         'user_guid' => $this->user->guid,
+                         'plugin_id' => 'OhYesTheme' 
+                    );
+	$this->OhYesCover = $this->OhYesCover[0];
+	$this->cover_file = get_uploaded_file('ohyes_cover');		
+	if(substr_count($_FILES['ohyes_cover']['type'], 'image/') 
+	                   && isset($_FILES['ohyes_cover']) 
+					   && $_FILES['ohyes_cover']['error'] == 0){
+					$this->filename = "ohyes/profilecover.jpg";					
+					$cover = new ElggFile();
+					$cover->setFilename($this->filename);
+					$cover->open("write");
+					$cover->write($this->cover_file);
+					$cover->close();
+                    $this->isCoverSet($this->iscoversettings);
+          return true;			
+				
+	}
+  }
+  return false;
+}
+/**
+* Get Admin Cover settings;
+* @access system
+* @return return;
+*/
+public static function canCover(){
+$settings = elgg_get_plugin_setting("ohyes_theme_cover", "OhYesTheme");
+  if($settings == 1){
+    return true;	
+  }
+  else {
+   return false;	
+  }
+}
 
 }
