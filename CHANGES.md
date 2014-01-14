@@ -1,11 +1,24 @@
 
-OhYesTheme 1.2-development
+OhYesTheme 1.2
 
 (https://github.com/lianglee/OhYesTheme)
 
 Changes:
  * Changed Blog Icon.
- * Move topbar with page #7
+ * Move topbar with page #7.
+ * Moveable topbar.
+ * Added Profile Cover. #6
+ * Some of css changed.
+ * Admin can Enable or Disable Profile Cover.
 
+Contributors to this release:
+ * Liang Lee - github @lianglee
+ * UK - community.elgg @sz1hosting
+ * Michele - community.elgg @michele
+ * Sathish - community.elgg @rubon
+ * Jose Luis - github @Jose Luis
 
+##How to enable profile cover?
+You need to go to : yourwebsite.extension/admin/plugin_settings/OhYesTheme
 
+ 
