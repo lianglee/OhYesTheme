@@ -5,3 +5,4 @@ OhYesTheme 1.3-development
 
 Bug Fixes:
 * Profile cover doesn't fit into profile, also it repeats; #9
+* Topbar shows site name also when user loggedin.

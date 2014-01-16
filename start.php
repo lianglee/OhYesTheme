@@ -285,7 +285,7 @@ function ohyestheme_register_menus(){
 	
 	}
 	
-	if(!elgg_is_admin_logged_in()){
+	if(!elgg_is_logged_in()){
 	  elgg_register_menu_item('topbar', array(
 			'name' => 'topbar_ohyestheme_user',
 			'href' => elgg_get_site_url(),
