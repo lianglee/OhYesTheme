@@ -374,8 +374,14 @@ font-size: 30px;
 }
 .ohyes-profile-cover {
  height: 250px;
-background-size: cover;
-background-repeat: no-repeat;
+ background-size: cover;
+ background-repeat: no-repeat;
+}
+.ohyes-profile-cover-container {
+  background:#E0E0E0;
+  border: 1px solid #eee;
+  margin-left: 63px;
+  height:250px;
 }
 /******************************************
  Subtitle
