@@ -54,8 +54,8 @@ $cover_form = elgg_view_form("ohyes/addcover", array(
 $profile_cover = OhYesTheme::coverUrl($user->guid);
 if(OhYesTheme::isCover($user->guid) && OhYesTheme::canCover()){
   $cover = ' 
-  <div id="ohyes-profile-container" style="background:#E0E0E0;border: 1px solid #eee;margin-left: 63px;height:250px;">
-    <div class="ohyes-profile-cover" style="background:url(\''.$profile_cover.'\');"></div>
+  <div id="ohyes-profile-container" class="ohyes-profile-cover-container">
+    <div class="ohyes-profile-cover" style="background:url(\''.$profile_cover.'\') no-repeat;background-size: cover;"></div>
   </div>';
 } 
 else {
