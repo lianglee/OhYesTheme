@@ -11,10 +11,8 @@
  
 $default_items = elgg_extract('default', $vars['menu'], array());
 $more_items = elgg_extract('more', $vars['menu'], array());
-
 echo ' <div class="ohyestopmenu" id="ohyestopmenu">
-       <a class="ohyestopmenu_button ohyestopmenu_close" href="#"><span class="arrow"></span></a>
-        <a class="ohyestopmenu_button ohyestopmenu_open" href="#ohyestopmenu"> <span class="arrow"></span></a>
+       <span class="arrow"></span>
         
 <ul class="ohyestopmenu_content">';
 foreach ($default_items as $menu_item) {
