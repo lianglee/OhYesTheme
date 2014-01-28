@@ -150,7 +150,7 @@ $OhyesTheme->register_menu_item('header', array(
 }
 if(elgg_is_active_plugin('messages') && elgg_is_logged_in()){
 $OhyesTheme->register_menu_item('header', array(
-											   'url' => elgg_get_site_url()."inbox/{$user}",
+											   'url' => elgg_get_site_url()."messages/inbox/{$user->username}",
 											   'title' => elgg_echo('ohyes:messages'),
 											   'image_class' => 'ohyes-theme-link-messages',
 											  ));
