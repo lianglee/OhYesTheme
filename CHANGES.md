@@ -1,5 +1,4 @@
-
-OhYesTheme 1.3-development
+OhYesTheme 1.3
 
 (https://github.com/lianglee/OhYesTheme)
 
